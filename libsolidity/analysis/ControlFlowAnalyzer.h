@@ -38,6 +38,8 @@ public:
 private:
 	/// Checks for uninitialized variable accesses in the control flow between @param _entry and @param _exit.
 	void checkUninitializedAccess(CFGNode const* _entry, CFGNode const* _exit) const;
+	/// Checks for unreachable code
+	void checkUnreachable(CFGNode const* _entry, CFGNode const* _exit, CFGNode const* _revert) const;
 
 	CFG const& m_cfg;
 	langutil::ErrorReporter& m_errorReporter;
